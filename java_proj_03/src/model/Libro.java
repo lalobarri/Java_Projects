@@ -8,9 +8,9 @@ public class Libro extends MaterialBibliografico{
     private String editorial;
     private int paginas;
     
-    public Libro(String cod, String titulo, boolean disponible, boolean sePuedePrestar, String autor, String isbn,
+    public Libro(String cod, String titulo, boolean disponible, String autor, String isbn,
             String editorial, int paginas) {
-        super(cod, titulo, disponible, sePuedePrestar);
+        super(cod, titulo, disponible);
         this.autor = autor;
         this.isbn = isbn;
         this.editorial = editorial;
@@ -18,14 +18,21 @@ public class Libro extends MaterialBibliografico{
     }
 
     @Override
-    public String mostrarInfo() {
+    public String toString() {
         return "Libro [codigo=" + codigo + ", titulo=" + 
         titulo + ", autor=" + autor + ", disponible=" + disponible
-                + ", isbn=" + isbn + ", sePuedePrestar=" + sePuedePrestar + 
-                ", editorial=" + editorial + ", paginas="
+                + ", isbn=" + isbn + ", editorial=" + editorial + ", paginas="
                 + paginas + "]";
     }
 
+    @Override
+    public boolean puedePrestarse() {
+        // El libro si se puede prestar
+        return true;
+    }
+
+   
+    
     
 
     
